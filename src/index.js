@@ -13,8 +13,10 @@ export function useLocalStorage(key, initialValue) {
       const item = window.localStorage.getItem(key)
       return item ? JSON.parse(item) : initialValue
     } catch (err) {
-      // If error just return the initial value.
-      console.log(err)
+      console.warn(
+        'There was an error whilst retrieving the value from local state. This has only thrown a `warning`, so this hook will continue to work.\nError: ',
+        err
+      )
       return initialValue
     }
   })
@@ -36,5 +38,6 @@ export function useLocalStorage(key, initialValue) {
       console.log(err)
     }
   }
+
   return [storedValue, setValueInLocalStorage]
 }
