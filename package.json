@@ -1,7 +1,7 @@
 {
   "name": "@rickbrown/use-local-storage",
-  "version": "2.0.0",
-  "description": "A custom React hook to simplifiy using local storage.",
+  "version": "1.0.0",
+  "description": "A custom React hook to simplify using local storage.",
   "author": "RickBr0wn",
   "license": "MIT",
   "repository": "RickBr0wn/use-local-storage",
@@ -19,10 +19,11 @@
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "postpublish": "git push --tags"
   },
   "peerDependencies": {
-    "react": "^16.8.6"
+    "react": ">=16.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -64,5 +65,8 @@
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-url": "^2.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
