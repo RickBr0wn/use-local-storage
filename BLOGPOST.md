@@ -64,7 +64,7 @@ Now we will use the `React.useState` hook to manage our `storedValue` lke this:
 	  const setValueInLocalStorage = () => {}
 	  // ... The rest of useLocalState function
 
-The biggest take away I learned from this process, is that useState can take a `function` as an argument, so we can computationally provide a default value. I have used `try/catch` blocks in this custom hook, to handle any errors, and in case of the error throw warning, so the hook does not just stop and return the initial value.
+The biggest take away I learned from this process, is that useState can take a `function` as an argument, so we can computationally provide a default value. I have used `try/catch` blocks in this custom hook, to handle any errors, and in case of the error throw a warning, so the hook does not just stop, and return the initial value.
 
 	const [storedValue, setStoredValue] = React.useState(() => {
 	  try {
@@ -80,7 +80,7 @@ The biggest take away I learned from this process, is that useState can take a `
 
 	// ... The rest of useLocalState function
 
-So let us discuss the `try` block. I used the `window.localStorage.getItem()` function to retrieve any existing local storage values (it might not be the first time a consumer has used this hook).
+So let us discuss the `try` block. I used the `window.localStorage.getItem()` function to retrieve any existing local storage value (it might not be the first time a consumer has used this hook).
 
 Using a `ternary operator` we will then check `item`. If it is `true` (there IS a value currently in local storage), will we use the `JSON.parse()` method to parse the value, and use it as the initial value. If `item` is false, we will just use the initial value.
 

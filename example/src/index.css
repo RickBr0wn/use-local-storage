@@ -1,5 +1,33 @@
-/* body {
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-} */
+}
+
+h1 {
+  font-size: calc(1.3rem + 3.6vw);
+}
+
+@media (min-width: 414px) {
+  h1 {
+    font-size: calc(1.3rem + 3.6vw);
+  }
+}
+
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 4.75rem;
+  }
+}
+
+h2 {
+  font-size: calc(1.25rem + 1.3vw);
+}
+
+p {
+  font-size: calc(0.95rem + 0.25vw);
+}
