@@ -2,10 +2,10 @@ import * as React from 'react'
 
 export function useLocalStorage(key, initialValue) {
   // Setup for the storedValue that we return in our hook API
-  // Implement a function to useState which will use either, the value which ...
-  // ... is currently stored in local-storage. Or if there is no current ...
-  // ... value then it will return the initial value. This function will only be ...
-  // ... called on the first render, useState will manage it after that.
+  // Implement a function to useState which will use either, the value which
+  // is currently stored in local-storage. Or if there is no current
+  // value then it will return the initial value. This function will only be
+  // called on the first render, useState will manage it after that.
   // A try/catch block is used in this function to handle any errors.
   const [storedValue, setStoredValue] = React.useState(() => {
     try {
@@ -14,7 +14,7 @@ export function useLocalStorage(key, initialValue) {
       return item ? JSON.parse(item) : initialValue
     } catch (err) {
       console.warn(
-        'There was an error whilst retrieving the value from local state. This has only thrown a `warning`, so this hook will continue to work.\nError: ',
+        'There was an error whilst retrieving the value from local state. \nThis has only thrown a `warning`, so this hook will continue to work.\nError: ',
         err
       )
       return initialValue
