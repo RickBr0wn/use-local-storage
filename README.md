@@ -1,34 +1,52 @@
 # @rickbrown/use-local-storage
 
-> A custom React hook to simplifiy using local storage.
+## Description
+
+> `useLocalStorage` is a custom React hook, which simplifies using the browsers local storage, when developing React applications.
 
 [![NPM](https://img.shields.io/npm/v/@rickbrown/use-local-storage.svg)](https://www.npmjs.com/package/@rickbrown/use-local-storage) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Install
+## Installation
+
+Use the package manager [yarn](https://yarnpkg.com/en/) to install the useLocalStorage hook.
 
 ```bash
-npm install --save @rickbrown/use-local-storage
+yarn add @rickbrown/use-local-storage
 ```
 
 ## Usage
 
-```jsx
-import React, { Component } from 'react'
-
-import { useMyHook } from '@rickbrown/use-local-storage'
+```JSX
+import { useLocalStorage } from '@rickbrown/use-local-storage'
 
 const Example = () => {
-  const example = useMyHook()
+  // Optionally accepts 2 arguments for its initial value.
+  // ('key','value')
+  const [name, setName] = useLocalStorage()
+  
+  const [newName, setNewName] = React.useState('')
+
   return (
-    <div>{example}</div>
+    <div>
+      <p>Current value in local storage: {name}</p>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        value={newName}
+        onChange={e => setNewName(e.target.value)}
+      />
+      <button onClick={() => setName(newName)}>
+        Click To Update Local Storage
+      </button>
+    </div>
   )
 }
 ```
 
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
 ## License
-
-MIT © [RickBr0wn](https://github.com/RickBr0wn)
-
----
-
-This hook is created using [create-react-hook](https://github.com/hermanya/create-react-hook).
+[MIT](https://choosealicense.com/licenses/mit/)
