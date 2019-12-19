@@ -1,10 +1,10 @@
 # @rickbrown/use-local-storage
 
+[![NPM](https://img.shields.io/npm/v/@rickbrown/use-local-storage.svg)](https://www.npmjs.com/package/@rickbrown/use-local-storage) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 ## Description
 
-> `useLocalStorage` is a custom React hook, which simplifies using the browsers local storage, when developing React applications.
-
-[![NPM](https://img.shields.io/npm/v/@rickbrown/use-local-storage.svg)](https://www.npmjs.com/package/@rickbrown/use-local-storage) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+`useLocalStorage` is a custom React hook, which simplifies using the browsers local storage, when developing React applications.
 
 ## Installation
 
